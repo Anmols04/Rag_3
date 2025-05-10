@@ -1,0 +1,10 @@
+streamlit
+python-dotenv
+langchain
+langchain-openai
+openai
+faiss-cpu
+tiktoken
+scikit-learn
+plotly
+protobuf==3.20.*
