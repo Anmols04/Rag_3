@@ -3,7 +3,21 @@
 import os
 import glob
 import streamlit as st
-from dotenv import load_dotenv
+
+
+def load_env_file(file_path):
+    with open(file_path) as f:
+        for line in f:
+            if line.strip() and not line.startswith("#"):
+                key, value = line.strip().split('=', 1)
+                os.environ[key] = value
+
+# Load your .env file
+load_env_file('.env')
+
+# Now you can access your environment variables using os.environ
+your_variable = os.getenv('YOUR_ENV_VARIABLE')
+
 
 # LangChain imports
 from langchain.document_loaders import DirectoryLoader, TextLoader
